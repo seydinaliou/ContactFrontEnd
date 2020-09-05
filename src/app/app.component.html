@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>clinique</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <script type="text/javascript">
+    function toggleSidebar() {
+       document.getElementById("sidebar").classList.toggle('active');
+    }
+  </script>
+  </head>
+<body>
+  <nav class="navbar navbar-collapse bg-primary
+  toolbar">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown messages-menu">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">
+          <i class="fa fa-envelope-o"></i>
+          <span class="label label-success">4</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li class="header">You have 4 messages</li>
+          <li>
+            <!-- inner menu: contains the actual data -->
+            <ul class="menu">
+              <li><!-- start message -->
+                <a href="#">
+                  <div class="col-lg-7">
+                    <div class="pull-left">
+                      <img src="src\images\aliou.jpg" alt="Avatar" class="img-circle">
+                    </div>
+                  </div>
+                  <h4>
+                    Support Team
+                    <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                  </h4>
+                  <p>Why not buy a new awesome theme?</p>
+                </a>
+              </li>
+              <!-- end message -->
+              <li>
+                <a href="#">
+                  <div class="pull-left">
+                    <img src="" class="img-circle" alt="">
+                  </div>
+                  <h4>
+                    AdminLTE Design Team
+                    <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                  </h4>
+                  <p>Why not buy a new awesome theme?</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="pull-left">
+                    <img src="" class="img-circle" alt="">
+                  </div>
+                  <h4>
+                    Developers
+                    <small><i class="fa fa-clock-o"></i> Today</small>
+                  </h4>
+                  <p>Why not buy a new awesome theme?</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="pull-left">
+                    <img src="" class="img-circle" alt="">
+                  </div>
+                  <h4>
+                    Sales Department
+                    <small><i class="fa fa-clock-o"></i> Yesterday</small>
+                  </h4>
+                  <p>Why not buy a new awesome theme?</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="pull-left">
+                    <img src="" class="img-circle" alt="">
+                  </div>
+                  <h4>
+                    Reviewers
+                    <small><i class="fa fa-clock-o"></i> 2 days</small>
+                  </h4>
+                  <p>Why not buy a new awesome theme?</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="footer"><a href="#">See All Messages</a></li>
+        </ul>
+      </li>
+
+      <!-- Notifications: style can be found in dropdown.less -->
+      <li class="dropdown notifications-menu">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">
+          <i class="fa fa-bell-o"></i>
+          <span class="label label-warning">10</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li class="header">You have 10 notifications</li>
+          <li class="footer"><a href="#">View all</a></li>
+        </ul>
+      </li>
+      <!-- User Account: style can be found in dropdown.less -->
+      <li class="dropdown user user-menu">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;">
+          <!--<img src="/src/images/ucad.PNG" class="user-image" width="20%" height="20%">-->
+          <i class="fa fa-user fa-lg"></i><span class="hidden-xs">Admin</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a  class="nav-link" routerLink="auth/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><a  routerLink="" class="navbar-link" (click)="logout()"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+          <li><a  class="nav-link" routerLink="auth/login"><span class="fa fa-user text-red"></span>Change Password</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+<div id="sidebar">
+  <div class="toggle-btn" onclick="toggleSidebar()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="nav-side-menu navbar-fixed-top">
+    <div class="brand">GESTION POLYCLINIQUE</div>
+
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+    <div class="menu-list">
+      <ul id="menu-content" class="menu-content collapse out">
+        <li data-toggle="collapse" data-target="#stact" class="collapsed">
+          <a><i class="fa fa-dashboard fa-lg"></i> Tableau de bord<span class="arrow"></span></a>
+        </li>
+        <ul class="sub-menu collapse" id="stact">
+          <li><a class="nav-link" routerLink="#">Nombre de x/y</a></li>
+        </ul>
+
+        <li data-toggle="collapse" data-target="#new" class="collapsed">
+          <a><i class="fa fa-users fa-lg"></i> Administration<span class="arrow"></span></a>
+        </li>
+        <ul class="sub-menu collapse" id="new">
+          <li><a class="nav-link" routerLink="/user">User Board</a></li>
+          <li><a class="nav-link" routerLink="/admin">Admin Board</a></li>
+        </ul>
+        <li data-toggle="collapse" data-target="#parametrage" class="collapsed">
+          <a><i class="fa fa-cogs fa-lg" ></i> Parametrage <span class="arrow"></span></a>
+        </li>
+        <ul class="sub-menu collapse" id="parametrage">
+          <li><a routerLink="/about">Missions</a></li>
+        </ul>
+
+        <li  data-toggle="collapse" data-target="#products" class="collapsed">
+          <a><i class="glyphicon glyphicon-home fa-lg"></i> Accueil Patient <span class="arrow"></span></a>
+        </li>
+        <ul class="sub-menu collapse" id="products">
+          <li><a routerLink="/contacts">Liste contact</a></li>
+        </ul>
+
+        <li data-toggle="collapse" data-target="#rv" class="collapsed">
+          <a><i class="fa fa-calendar fa-lg"></i> Rendez-vous <span class="arrow"></span></a>
+        </li>
+        <ul class="sub-menu collapse" id="rv">
+          <li><a routerLink="/about">Missions</a></li>
+        </ul>
+
+        <li data-toggle="collapse" data-target="#infirmerie" class="collapsed">
+          <a><i class="fa fa-stethoscope fa-lg"></i> Infirmerie <span class="arrow"></span></a>
+        </li>
+        <ul class="sub-menu collapse" id="infirmerie">
+          <li><a routerLink="/about">Missions</a></li>
+        </ul>
+
+        <li data-toggle="collapse" data-target="#facturation" class="collapsed">
+          <a><i class="glyphicon glyphicon-euro fa-lg"></i> Facturation <span class="arrow"></span></a>
+        </li>
+        <ul class="sub-menu collapse" id="facturation">
+          <li>Recettes</li>
+          <li>Depenses</li>
+        </ul>
+
+        <li data-toggle="collapse" data-target="#consultation" class="collapsed">
+          <a><i class="fa fa-user-md fa-lg"></i> Consultation <span class="arrow"></span></a>
+        </li>
+        <ul class="sub-menu collapse" id="consultation">
+          <li>New Service 1</li>
+        </ul>
+
+        <li data-toggle="collapse" data-target="#pharmacie" class="collapsed">
+          <a><i class="fa fa-plus-square fa-lg"></i> Pharmacie <span class="arrow"></span></a>
+        </li>
+        <ul class="sub-menu collapse" id="pharmacie">
+          <li>New Service 1</li>
+        </ul>
+
+        <li data-toggle="collapse" data-target="#labo" class="collapsed">
+          <a><i class="fa fa-heartbeat fa-lg"></i> Laboratoire <span class="arrow"></span></a>
+        </li>
+        <ul class="sub-menu collapse" id="labo">
+          <li>New Service 1</li>
+        </ul>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  <div class="container" style="margin-left:245px;width: 84%;">
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  </div>
+</body>
+</html>

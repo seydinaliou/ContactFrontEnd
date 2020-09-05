@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>contacts</title>
+</head>
+
+<body>
+<div class="panel panel-primary">
+<div class="panel panel-heading">Liste des dossiers patients</div>
+<div class="panel-body">
+       <div class="navbar-form">
+          <div class="input-group navbar-right">
+            <input type="text" [(ngModel)]="motCle" class="form-control" placeholder="Nom"/>
+            <div class="input-group-btn">
+              <button type="submit" class="btn btn-primary add-new" (click)="chercher()"> <i class="glyphicon glyphicon-search"></i> </button>
+            </div>
+          </div>
+       </div>
+        <div class="input-group-btn">
+          <button routerLink="/new-contact" type="button" class="btn btn-primary navbar-left"><i class="glyphicon glyphicon-plus"></i> Nouveau Dossier</button>
+        </div>
+
+       <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Prenom</th><th>Nom</th><th>Email</th>
+              <th>Date Naissance</th><th>Telephone</th><th>Photo</th><th colspan="2">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of pageContact?.content">
+                <td>{{c.prenom}}</td>
+                <td>{{c.nom}}</td>
+                <td>{{c.email}}</td>
+                <td>{{c.dateNaissance}}</td>
+                <td>{{c.tel}}</td>
+                <td>{{c.photo}}</td>
+                <td>
+                  <a class="add clickable" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                  <a class="glyphicon glyphicon-edit" title="Edit" data-toggle="tooltip" (click)="onEditContact(c.id)" ></a>
+                </td>
+                <td>
+                  <a title="Delete" data-toggle="tooltip" (click)="onDeleteContact(c)"><i class="glyphicon glyphicon-remove"></i></a>
+                </td>
+              </tr>
+            </tbody>
+      </table>
+        <ul class="pagination">
+          <li [ngClass]="{'active':i==currentPage}" *ngFor="let p of pages; let i=index">
+            <a class="clickable" (click)="gotoPage(i)">{{i}}</a>
+          </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+
+
+
